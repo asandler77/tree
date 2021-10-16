@@ -1,9 +1,11 @@
 export const DATA = [
   {
     id: '0',
-    name: 'Vladimir',
+    name: 'Vladimirkjkjg',
     sureName: 'Ulianov',
     father: 'Ilia',
+    fatherId: '1',
+    motherId: '2',
     mother: 'Maria',
     imageUri: 'https://www.biography.com/.image/t_share/MTIwNjA4NjMzODgyNTEwODYw/vladimir-lenin-9379007-1-402.jpg',
   },
@@ -15,6 +17,8 @@ export const DATA = [
     mother: 'Anna',
     child: 'Vladimir',
     wife: 'Maria',
+    fatherId: '1',
+    motherId: '2',
     imageUri: 'https://avatars.mds.yandex.net/get-zen_doc/195350/pub_5b2cfb51c2fba000aa1dddbe_5b2d0683e5a60f00a800480f/scale_1200',
   },
   {
@@ -25,6 +29,8 @@ export const DATA = [
     mother: 'Katya',
     child: 'Vladimir',
     husband: 'Ilia',
+    fatherId: '1',
+    motherId: '2',
     imageUri: 'https://photos.geni.com/p12/6b/84/20/6c/534448388c483d59/mab_original.jpg',
   },
 ];

@@ -1,39 +1,9 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React, { ReactElement } from 'react';
 import Carousel from './Carousel';
-import Person from './Person';
+import { DATA } from '../data/data';
 
 export default (): ReactElement => {
-  const DATA = [
-    {
-      id: '0',
-      name: 'Vladimir',
-      sureName: 'Ulianov',
-      father: 'Ilia',
-      mother: 'Maria',
-      imageUri: 'https://www.biography.com/.image/t_share/MTIwNjA4NjMzODgyNTEwODYw/vladimir-lenin-9379007-1-402.jpg',
-    },
-    {
-      id: '1',
-      name: 'Ilia',
-      sureName: 'Ulianov',
-      father: 'Alexander',
-      mother: 'Anna',
-      child: 'Vladimir',
-      wife: 'Maria',
-      imageUri: 'https://avatars.mds.yandex.net/get-zen_doc/195350/pub_5b2cfb51c2fba000aa1dddbe_5b2d0683e5a60f00a800480f/scale_1200',
-    },
-    {
-      id: '2',
-      name: 'Maria',
-      sureName: 'Ulianov',
-      father: 'Evgeny',
-      mother: 'Katya',
-      child: 'Vladimir',
-      husband: 'Ilia',
-      imageUri: 'https://photos.geni.com/p12/6b/84/20/6c/534448388c483d59/mab_original.jpg',
-    },
-  ];
   return (
     <View style={styleSheet.container}>
       <Text style={styleSheet.title}>Ulianov family</Text>

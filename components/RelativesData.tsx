@@ -7,9 +7,10 @@ interface Props {
 }
 
 export default ({ relativeData }: Props) => {
-  const { father, mother, onPersonPress } = relativeData;
+  const { father, mother, onPersonPress, fatherId } = relativeData;
   const goToFather = () => {
-    onPersonPress && onPersonPress(2);
+    console.log('fatherId', fatherId);
+    fatherId && onPersonPress && onPersonPress(fatherId);
   };
   return (
     <View style={styleSheet.relativeDataContainer}>

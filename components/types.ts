@@ -8,5 +8,7 @@ export interface PersonalData {
   husband?: string;
   father?: string;
   mother?: string;
-  onPersonPress?: (personId: number) => void;
+  motherId?: string;
+  fatherId?: string;
+  onPersonPress?: (personId: string) => void;
 }

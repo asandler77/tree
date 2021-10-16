@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import Person from './Person';
-import { FlatList, StyleSheet, View } from 'react-native';
+import { FlatList, View } from 'react-native';
 import { PersonalData } from './types';
 
 interface Props {
@@ -8,8 +8,9 @@ interface Props {
 }
 export default ({ personData }: Props) => {
   // type never
-  const refContainer = useRef<any>(1);
-  const onPress = (personId: number) => {
+  console.log('personData1', personData);
+  const refContainer = useRef<any>(null);
+  const onPress = (personId: string) => {
     refContainer.current?.scrollToIndex({ animated: true, index: personId });
   };
   return (
@@ -31,6 +32,7 @@ export default ({ personData }: Props) => {
               child={item.child}
               husband={item.husband}
               wife={item.wife}
+              fatherId={item.fatherId}
               onPersonPress={onPress}
             />
           </View>
@@ -39,9 +41,3 @@ export default ({ personData }: Props) => {
     />
   );
 };
-
-const styleSheet = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
