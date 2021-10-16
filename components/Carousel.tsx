@@ -1,16 +1,16 @@
 import React, { useRef } from 'react';
 import Person from './Person';
 import { FlatList, StyleSheet, View } from 'react-native';
-import { PersonType } from './types';
+import { PersonalData } from './types';
 
 interface Props {
-  personData: PersonType[];
+  personData: PersonalData[];
 }
 export default ({ personData }: Props) => {
   // type never
   const refContainer = useRef<any>(1);
   const onPress = (personId: number) => {
-      refContainer.current?.scrollToIndex({ animated: true, index: personId });
+    refContainer.current?.scrollToIndex({ animated: true, index: personId });
   };
   return (
     <FlatList
