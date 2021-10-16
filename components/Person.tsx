@@ -4,33 +4,53 @@ import { PersonType } from './types';
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from './constants';
 
 const cardWidth = SCREEN_WIDTH * 0.8;
-const cardHeight = SCREEN_HEIGHT * 0.8;
+const cardHeight = SCREEN_HEIGHT * 0.7;
 
-export default ({ name, imageUri }: PersonType): ReactElement => {
+export default ({ name, imageUri, father, mother, sureName }: PersonType): ReactElement => {
   return (
     <View style={styleSheet.container}>
-      <Text style={styleSheet.title}>{name}</Text>
-      <Image source={{ uri: imageUri }} style={styleSheet.image} />
+      <View style={styleSheet.personalDataContainer}>
+        <View>
+          <Text style={styleSheet.personalDataTitle}>{name}</Text>
+          <Text style={styleSheet.personalDataTitle}>{sureName}</Text>
+        </View>
+        <Image source={{ uri: imageUri }} style={styleSheet.image} />
+      </View>
+      <View style={styleSheet.relativeDataContainer}>
+        <Text style={styleSheet.relativeDataTitle}>Father: {father}</Text>
+        <Text style={styleSheet.relativeDataTitle}>Mother: {mother}</Text>
+      </View>
     </View>
   );
 };
 
 const styleSheet = StyleSheet.create({
   image: {
-    borderWidth: 1,
+    borderRadius: 10,
     width: 120,
     height: 160,
   },
-  title: {
+  personalDataContainer: {
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    paddingTop: 20,
+    paddingHorizontal: 20,
+  },
+  personalDataTitle: {
     fontSize: 20,
+  },
+  relativeDataContainer: {
+    paddingTop: 40,
+    paddingHorizontal: 20,
+  },
+  relativeDataTitle: {
+    fontSize: 30,
   },
   container: {
     borderWidth: 1,
-    borderColor: 'green',
     height: cardHeight,
     width: cardWidth,
     borderRadius: 20,
-    paddingTop: 20,
-    paddingLeft: 20,
+    marginHorizontal: 15,
   },
 });

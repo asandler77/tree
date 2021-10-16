@@ -1,34 +1,20 @@
 import React from 'react';
 import Person from './Person';
 import { FlatList, StyleSheet, View } from 'react-native';
+import { PersonType } from './types';
 
-export default () => {
-  const DATA = [
-    {
-      name: 'Vladimir',
-      father: 'Ilia',
-      mother: 'Maria',
-    },
-    {
-      name: 'Ilia',
-      child: 'Vladimir',
-      wife: 'Maria',
-    },
-    {
-      name: 'Maria',
-      child: 'Vladimir',
-      husband: 'Ilia',
-    },
-  ];
+interface Props {
+  personData: PersonType[];
+}
+export default ({ personData }: Props) => {
   return (
     <FlatList
-      data={DATA}
+      data={personData}
       horizontal={true}
       renderItem={({ item }) => {
         return (
           <View>
-            <Person name={item.name} />
-
+            <Person name={item.name} sureName={item.sureName} imageUri={item.imageUri} mother={item.mother} father={item.father} child={item.child} husband={item.husband} wife={item.wife} />
           </View>
         );
       }}
