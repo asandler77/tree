@@ -8,17 +8,17 @@ interface Props {
 }
 export default ({ personData }: Props) => {
   // type never
-  console.log('personData1', personData);
   const refContainer = useRef<any>(null);
-  const onPress = (personId: string) => {
+  const onPress = (personId?: string) => {
     refContainer.current?.scrollToIndex({ animated: true, index: personId });
   };
+
   return (
     <FlatList
       ref={refContainer}
       data={personData}
       horizontal={true}
-      keyExtractor={(item, index) => item.id}
+      keyExtractor={item => item.id}
       renderItem={({ item }) => {
         return (
           <View>
@@ -33,6 +33,9 @@ export default ({ personData }: Props) => {
               husband={item.husband}
               wife={item.wife}
               fatherId={item.fatherId}
+              motherId={item.motherId}
+              sonId={item.sonId}
+              son={item.son}
               onPersonPress={onPress}
             />
           </View>

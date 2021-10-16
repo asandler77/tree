@@ -10,5 +10,7 @@ export interface PersonalData {
   mother?: string;
   motherId?: string;
   fatherId?: string;
+  sonId?: string;
+  son?: string;
   onPersonPress?: (personId: string) => void;
 }
