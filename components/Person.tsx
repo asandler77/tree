@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React, { ReactElement } from 'react';
 import { PersonType } from './types';
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from './constants';
@@ -6,7 +6,10 @@ import { SCREEN_HEIGHT, SCREEN_WIDTH } from './constants';
 const cardWidth = SCREEN_WIDTH * 0.8;
 const cardHeight = SCREEN_HEIGHT * 0.7;
 
-export default ({ name, imageUri, father, mother, sureName }: PersonType): ReactElement => {
+export default ({ name, imageUri, father, mother, sureName, onPersonPress }: PersonType): ReactElement => {
+  const goToFather = () => {
+    onPersonPress && onPersonPress(2);
+  };
   return (
     <View style={styleSheet.container}>
       <View style={styleSheet.personalDataContainer}>
@@ -17,7 +20,9 @@ export default ({ name, imageUri, father, mother, sureName }: PersonType): React
         <Image source={{ uri: imageUri }} style={styleSheet.image} />
       </View>
       <View style={styleSheet.relativeDataContainer}>
-        <Text style={styleSheet.relativeDataTitle}>Father: {father}</Text>
+        <TouchableOpacity onPress={goToFather}>
+          <Text style={styleSheet.relativeDataTitle}>Father: {father}</Text>
+        </TouchableOpacity>
         <Text style={styleSheet.relativeDataTitle}>Mother: {mother}</Text>
       </View>
     </View>
